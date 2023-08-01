@@ -65,11 +65,11 @@ fundamentos = pd.read_excel("./fundamentos.xlsx", engine="openpyxl")
 
 
 var1 = st.sidebar.selectbox("Selecione a empresa para analisar:", 
-                     t1.columns, index=t1.index('PETR4'))
+                     t1.columns)
 
 
 var2 = st.sidebar.selectbox("Selecione a variável para analisar:", 
-                     fundamentos.columns, index=fundamentos.index('Cotação'))
+                     fundamentos.columns)
 
 
 #var3 = st.sidebar.selectbox("Selecione a variável para analisar:", 
