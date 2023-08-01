@@ -1,8 +1,6 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
-from bs4 import BeautifulSoup as bs
-import requests
 import pandas as pd
 
 st.set_page_config(page_icon="Oi", page_title="Análise Multiplos")
@@ -19,29 +17,7 @@ st.sidebar.text('Projeto: Análise de Fundamentos')
 
 #### PUXAR QUAIS SÃO OS TICKERS ATUAIS DA B3
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3'
-}
-
-url = "https://www.infomoney.com.br/cotacoes/empresas-b3/"
-page = requests.get(url, headers=headers)
-
-soup = bs(page.content, "html.parser")
-
-dados = soup.find_all('td', class_ ='strong')
-
-#Lista de Ações
-tick1 = []
-
-for tiks in dados:
-    tick1.append(tiks.get_text().strip())
-
-tickers = [item for item in tick1 if not (str(item).endswith('11') or str(item).endswith('12') or str(item).endswith('F') or str(item).endswith('34') or str(item).endswith('39') or str(item).endswith('31') or str(item).endswith('13') or str(item).endswith('33') or str(item).endswith('35'))]
-
-
-t1 = pd.DataFrame(columns = tickers)
-
-
+t1 = pd.read_excel("./t1.xlsx", engine="openpyxl")
 
 
 
