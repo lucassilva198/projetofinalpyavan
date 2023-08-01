@@ -65,11 +65,11 @@ fundamentos = pd.read_excel("./fundamentos.xlsx", engine="openpyxl")
 
 
 var1 = st.sidebar.selectbox("Selecione a empresa para analisar:", 
-                     t1.columns)
+                     t1.columns, index=t1.index('PETR4'))
 
 
 var2 = st.sidebar.selectbox("Selecione a variável para analisar:", 
-                     fundamentos.columns)
+                     fundamentos.columns, index=fundamentos.index('Cotação'))
 
 
 #var3 = st.sidebar.selectbox("Selecione a variável para analisar:", 
@@ -121,6 +121,12 @@ fundamentos
 st.header("**Análise do Múltiplo**")
 
 
+st.markdown(
+    """# 
+A medida que fora montada a tabela com os valores de referência acerca dos multiplos das ações, a anáise agora é acerca da comparativadade entre estas ações.
+Acima foi traça da uma reta que apresenta a média dentre todas as empresas para aquela variável. Neste caso, o intuíto deste trabalho é justamente medir esta comparação.
+Como exemplo, para a máxima de 52 semanas, a PETR4 este acima da média de cotação das outras empresas, semente tendo algumas poucas empresas que obtiveram uma média acima dela.
+""" )
 
 
 
@@ -177,12 +183,6 @@ st.pyplot(fig)
 
 
 
-st.markdown(
-    """# 
-A medida que fora montada a tabela com os valores de referência acerca dos multiplos das ações, a anáise agora é acerca da comparativadade entre estas ações.
-Acima foi traça da uma reta que apresenta a média dentre todas as empresas para aquela variável. Neste caso, o intuíto deste trabalho é justamente medir esta comparação.
-Como exemplo, para a máxima de 52 semanas, a PETR4 este acima da média de cotação das outras empresas, semente tendo algumas poucas empresas que obtiveram uma média acima dela.
-""" )
 
 
 
