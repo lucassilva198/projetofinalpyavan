@@ -1,7 +1,3 @@
-pip install seaborn
-pip install matplotlib
-
-
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
