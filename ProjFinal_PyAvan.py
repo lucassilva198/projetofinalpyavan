@@ -1,10 +1,7 @@
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
-from bs4 import BeautifulSoup as bs
-import requests
 import pandas as pd
-import numpy as np
 
 st.set_page_config(page_icon="Oi", page_title="Análise Multiplos")
 
