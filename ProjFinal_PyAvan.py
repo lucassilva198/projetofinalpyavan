@@ -1,3 +1,7 @@
+pip install seaborn
+pip install matplotlib
+
+
 import seaborn as sns
 import matplotlib.pyplot as plt
 import streamlit as st
@@ -5,7 +9,6 @@ from bs4 import BeautifulSoup as bs
 import requests
 import pandas as pd
 import numpy as np
-from sklearn.ensemble import RandomForestClassifier
 
 st.set_page_config(page_icon="Oi", page_title="Análise Multiplos")
 
